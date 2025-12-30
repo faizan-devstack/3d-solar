@@ -57,13 +57,13 @@ const AnimatedHeaderSection: React.FC<AnimatedHeaderSectionProps> = ({
           className="flex flex-col justify-center gap-12 pt-16 sm:gap-16"
         >
           <p
-            className={`text-sm font-light tracking-[0.2rem] uppercase px-10 ${textColor}`}
+            className={`text-xl font-light text-white/70 tracking-[0.25rem] uppercase px-10 ${textColor}`}
           >
             {subTitle}
           </p>
           <div className="px-10">
             <h1
-              className={`flex flex-col text-xl gap-12 tracking-wide uppercase sm:gap-16 md:block ${textColor}`}
+              className={`flex flex-col text-5xl gap-12 tracking-wide uppercase sm:gap-16 md:block ${textColor}`}
             >
               {titleParts.map((part, index) => (
                 <span key={index}>{part} </span>
@@ -77,7 +77,7 @@ const AnimatedHeaderSection: React.FC<AnimatedHeaderSectionProps> = ({
         <div className="text-end">
           <AnimatedTextLines
             text={text}
-            className={`uppercase text-sm text-gray-200/70 value-text-responsive ${textColor}`}
+            className={`uppercase text-xl text-white value-text-responsive ${textColor}`}
           />
         </div>
       </div>

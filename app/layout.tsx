@@ -5,7 +5,7 @@ import "./globals.css";
 const onest = Onest({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-onest',
   preload: true,
   fallback: ['system-ui', 'arial'],

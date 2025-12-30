@@ -7,10 +7,10 @@ import { useMediaQuery } from "react-responsive";
 import AnimatedHeaderSection from "./AnimatedHeaderSection";
 import { useState, useEffect } from "react";
 import * as THREE from 'three'
-import { EffectComposer, Bloom } from "@react-three/postprocessing";
+// import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { OrbitControls } from "@react-three/drei";
 
-const Hero = () => {
+const HeroSection = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const mediaMatch = useMediaQuery({ maxWidth: 853 });
@@ -19,13 +19,10 @@ const Hero = () => {
     setIsMobile(mediaMatch);
   }, [mediaMatch]);
 
-  const text = `I am experienced in building scalable, high performance
-  web applications using React, Next.js, Node.js, Express,
-  and PostgreSQL.Experienced in building pixel perfect 
-  UI's, 3D animations, secure REST APIs, AI powered
-  features, SEO optimized apps, and translating
-  Figma designs into production ready, 
-  multilingual interfaces.`;
+  const text = `I build web applications with 
+  React, Next.js, Node.js,R3F and PostgreSQL.
+  I specialize in pixel perfect UIs, advanced
+   3D rendering and production ready interfaces.`;
 
   return (
     <section id="home" className="flex flex-col justify-end min-h-screen pb-40">
@@ -36,8 +33,8 @@ const Hero = () => {
         textColor={"white"}
       />
       <figure
-        className="absolute inset-0"
-        style={{ width: "100vw", height: "100vh" }}
+        className="absolute inset-0 -z-10 xl:z-10"
+        style={{ pointerEvents: "none", width: "100vw", height: "100vh" }}
       >
         <Canvas
           shadows
@@ -83,14 +80,14 @@ const Hero = () => {
             </group>
           </Environment>
 
-          <EffectComposer>
+          {/* <EffectComposer>
             <Bloom
               intensity={0.15}
               luminanceThreshold={0.5}
               luminanceSmoothing={0.5}
               radius={0.6}
             />
-          </EffectComposer>
+          </EffectComposer> */}
 
           <OrbitControls
             enableZoom={false}
@@ -108,4 +105,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroSection;

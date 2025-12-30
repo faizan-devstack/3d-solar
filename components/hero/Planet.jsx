@@ -12,30 +12,30 @@ export function Planet(props) {
     const ringContainer = useRef(null);
     const { nodes, materials } = useGLTF("/models/Planet.glb");
 
-    useEffect(() => {
-    if (materials["Material.002"]) {
-        materials["Material.002"].setValues({
-            color: new THREE.Color("#ffffff"),
-            metalness: 0,
-            roughness: 0.1, // Reduced for smoother surface
-            envMapIntensity: 1.0, // Increased for more realistic reflections
-            transmission: 0,
-            clearcoat: 1.0, // Added clearcoat for glossy, realistic finish
-            clearcoatRoughness: 0.1, // Smooth clearcoat for realism
-        });
-    }
+//     useEffect(() => {
+//     if (materials["Material.002"]) {
+//         materials["Material.002"].setValues({
+//             color: new THREE.Color("#ffffff"),
+//             metalness: 0,
+//             roughness: 0.1, // Reduced for smoother surface
+//             envMapIntensity: 1.0, // Increased for more realistic reflections
+//             transmission: 0,
+//             clearcoat: 1.0, // Added clearcoat for glossy, realistic finish
+//             clearcoatRoughness: 0.1, // Smooth clearcoat for realism
+//         });
+//     }
 
-    if (materials["Material.001"]) {
-        materials["Material.001"].setValues({
-            color: new THREE.Color("#ffd700"),
-            metalness: 1.0,
-            roughness: 0.15, // Slightly reduced for smoother, polished metal look
-            envMapIntensity: 2.0, // Increased for stronger, more realistic metallic reflections
-            emissive: new THREE.Color("#ffaa00"),
-            emissiveIntensity: 0.2, // Slightly reduced to avoid over-glow while keeping subtle warmth
-        });
-    }
-}, [materials]);
+//     if (materials["Material.001"]) {
+//         materials["Material.001"].setValues({
+//             color: new THREE.Color("#ffd700"),
+//             metalness: 1.0,
+//             roughness: 0.15, // Slightly reduced for smoother, polished metal look
+//             envMapIntensity: 2.0, // Increased for stronger, more realistic metallic reflections
+//             emissive: new THREE.Color("#ffaa00"),
+//             emissiveIntensity: 0.2, // Slightly reduced to avoid over-glow while keeping subtle warmth
+//         });
+//     }
+// }, [materials]);
 
     useGSAP(() => {
         const tl = gsap.timeline();
@@ -77,7 +77,7 @@ export function Planet(props) {
                     geometry={nodes.Sphere.geometry}
                     material={materials["Material.002"]}
                     rotation={[0, 0, 0.741]}
-                    scale={0.9}
+                    scale={0.8}
                 />
                 <mesh
                     castShadow
@@ -86,7 +86,7 @@ export function Planet(props) {
                     material={materials["Material.001"]}
                     position={[0.647, 1.03, -0.724]}
                     rotation={[0, 0, 0.741]}
-                    scale={0.2}
+                    scale={0.18}
                 />
             </group>
             <mesh
@@ -96,7 +96,7 @@ export function Planet(props) {
                 geometry={nodes.Ring.geometry}
                 material={materials["Material.001"]}
                 rotation={[-0.124, 0.123, -0.778]}
-                scale={1.5}
+                scale={1.4}
             />
         </group>
     );
