@@ -14,31 +14,37 @@ export default function Page() {
   const contactRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const pin = ScrollTrigger.create({
-        trigger: heroRef.current,
-        start: "top top",
-        end: "+=100%",
-        pin: true,
-        pinSpacing: false,
-      });
+    const mm = gsap.matchMedia();
 
-      gsap.to(contactRef.current, {
-        y: "-100vh",
-        ease: "none",
-        scrollTrigger: {
+    mm.add("(min-width: 768px)", () => {
+      const ctx = gsap.context(() => {
+        const pin = ScrollTrigger.create({
           trigger: heroRef.current,
           start: "top top",
           end: "+=100%",
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
+          pin: true,
+          pinSpacing: false,
+        });
+
+        gsap.to(contactRef.current, {
+          y: "-100vh",
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: "top top",
+            end: "+=100%",
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        ScrollTrigger.refresh();
       });
 
-      ScrollTrigger.refresh();
+      return () => ctx.revert();
     });
 
-    return () => ctx.revert();
+    return () => mm.revert();
   }, []);
 
   return (

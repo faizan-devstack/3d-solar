@@ -77,7 +77,7 @@ export function Planet(props) {
                     geometry={nodes.Sphere.geometry}
                     material={materials["Material.002"]}
                     rotation={[0, 0, 0.741]}
-                    scale={0.8}
+                    scale={0.95}
                 />
                 <mesh
                     castShadow

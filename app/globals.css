@@ -25,6 +25,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@media (min-width: 768px) {
+  .dynamic-height {
+    height: 100vh !important;
+  }
+}
+
 .glass-card {
   @apply relative p-10 rounded-3xl backdrop-blur-xl bg-white/5 border border-white/20 shadow-xl transition-all duration-500;
 }

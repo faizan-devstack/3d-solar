@@ -54,16 +54,16 @@ const AnimatedHeaderSection: React.FC<AnimatedHeaderSectionProps> = ({
       <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
         <div
           ref={headerRef}
-          className="flex flex-col justify-center gap-12 pt-16 sm:gap-16"
+          className="flex flex-col justify-center gap-6 pt-16 sm:gap-16"
         >
           <p
-            className={`text-xl font-light text-white/70 tracking-[0.25rem] uppercase px-10 ${textColor}`}
+            className={`md:text-xl font-light text-foreground/70 tracking-[0.25rem] uppercase px-4 md:px-10 ${textColor}`}
           >
             {subTitle}
           </p>
-          <div className="px-10">
+          <div className="px-4 md:px-10">
             <h1
-              className={`flex flex-col text-5xl gap-12 tracking-wide uppercase sm:gap-16 md:block ${textColor}`}
+              className={`flex text-3xl md:text-5xl text-foreground gap-4 md:gap-12 tracking-wide uppercase sm:gap-16 md:block ${textColor}`}
             >
               {titleParts.map((part, index) => (
                 <span key={index}>{part} </span>
@@ -72,12 +72,12 @@ const AnimatedHeaderSection: React.FC<AnimatedHeaderSectionProps> = ({
           </div>
         </div>
       </div>
-      <div className={`relative px-10 ${textColor}`}>
-        <div className="absolute inset-x-0 border-t-2 border-canvas-border/70" />
+      <div className={`relative px-4 md:px-10 ${textColor}`}>
+        <div className="absolute inset-x-0 border-t-2 border-foreground/70" />
         <div className="text-end">
           <AnimatedTextLines
             text={text}
-            className={`uppercase text-xl text-white value-text-responsive ${textColor}`}
+            className={`uppercase text-sm md:text-xl text-foreground/80 ${textColor}`}
           />
         </div>
       </div>

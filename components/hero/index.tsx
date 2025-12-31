@@ -12,17 +12,15 @@ import { OrbitControls } from "@react-three/drei";
 
 const HeroSection = () => {
   const [isMobile, setIsMobile] = useState(false);
-
   const mediaMatch = useMediaQuery({ maxWidth: 853 });
 
   useEffect(() => {
     setIsMobile(mediaMatch);
   }, [mediaMatch]);
 
-  const text = `I build web applications with 
-  React, Next.js, Node.js,R3F and PostgreSQL.
-  I specialize in pixel perfect UIs, advanced
-   3D rendering and production ready interfaces.`;
+  const text = `I empower ambitious and scaling startups 
+  to dominate their markets by 
+  developing high impact Webs/Apps`;
 
   return (
     <section id="home" className="flex flex-col justify-end min-h-screen pb-40">
@@ -30,11 +28,11 @@ const HeroSection = () => {
         subTitle={"FULL STACK DEVELOPER"}
         title={"MUHAMMAD FAIZAN"}
         text={text}
-        textColor={"white"}
+        textColor={''}
       />
       <figure
-        className="absolute inset-0 -z-10 xl:z-10"
-        style={{ pointerEvents: "none", width: "100vw", height: "100vh" }}
+        className="absolute inset-0 z-0 md:z-10 pointer-events-none w-screen"
+        style={{ height: isMobile ? "70vh" : "100vh" }}
       >
         <Canvas
           shadows
