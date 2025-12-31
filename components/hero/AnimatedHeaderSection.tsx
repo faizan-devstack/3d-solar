@@ -33,8 +33,8 @@ const AnimatedHeaderSection: React.FC<AnimatedHeaderSectionProps> = ({
         : undefined,
     });
     tl.from(contextRef.current, {
-      y: "60vh",
-      duration: 1,
+      y: "50vh",
+      duration: 2.5,
       ease: "circ.out",
     });
     tl.from(
@@ -42,10 +42,10 @@ const AnimatedHeaderSection: React.FC<AnimatedHeaderSectionProps> = ({
       {
         opacity: 0,
         y: "200",
-        duration: 1,
+        duration: 2.5,
         ease: "circ.out",
       },
-      "<+0.2"
+      "<+0.1"
     );
   }, []);
 
@@ -63,7 +63,7 @@ const AnimatedHeaderSection: React.FC<AnimatedHeaderSectionProps> = ({
           </p>
           <div className="px-4 md:px-10">
             <h1
-              className={`flex text-3xl md:text-5xl text-foreground gap-4 md:gap-12 tracking-wide uppercase sm:gap-16 md:block ${textColor}`}
+              className={`flex text-3xl md:text-5xl text-foreground leading-8 gap-4 md:gap-12 tracking-wide uppercase sm:gap-16 md:block ${textColor}`}
             >
               {titleParts.map((part, index) => (
                 <span key={index}>{part} </span>

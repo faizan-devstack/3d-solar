@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import * as THREE from "three";
+// import * as THREE from "three";
 
 export function Planet(props) {
     const shapeContainer = useRef(null);
@@ -12,33 +12,33 @@ export function Planet(props) {
     const ringContainer = useRef(null);
     const { nodes, materials } = useGLTF("/models/Planet.glb");
 
-//     useEffect(() => {
-//     if (materials["Material.002"]) {
-//         materials["Material.002"].setValues({
-//             color: new THREE.Color("#ffffff"),
-//             metalness: 0,
-//             roughness: 0.1, // Reduced for smoother surface
-//             envMapIntensity: 1.0, // Increased for more realistic reflections
-//             transmission: 0,
-//             clearcoat: 1.0, // Added clearcoat for glossy, realistic finish
-//             clearcoatRoughness: 0.1, // Smooth clearcoat for realism
-//         });
-//     }
+    //     useEffect(() => {
+    //     if (materials["Material.002"]) {
+    //         materials["Material.002"].setValues({
+    //             color: new THREE.Color("#ffffff"),
+    //             metalness: 0,
+    //             roughness: 0.1, // Reduced for smoother surface
+    //             envMapIntensity: 1.0, // Increased for more realistic reflections
+    //             transmission: 0,
+    //             clearcoat: 1.0, // Added clearcoat for glossy, realistic finish
+    //             clearcoatRoughness: 0.1, // Smooth clearcoat for realism
+    //         });
+    //     }
 
-//     if (materials["Material.001"]) {
-//         materials["Material.001"].setValues({
-//             color: new THREE.Color("#ffd700"),
-//             metalness: 1.0,
-//             roughness: 0.15, // Slightly reduced for smoother, polished metal look
-//             envMapIntensity: 2.0, // Increased for stronger, more realistic metallic reflections
-//             emissive: new THREE.Color("#ffaa00"),
-//             emissiveIntensity: 0.2, // Slightly reduced to avoid over-glow while keeping subtle warmth
-//         });
-//     }
-// }, [materials]);
+    //     if (materials["Material.001"]) {
+    //         materials["Material.001"].setValues({
+    //             color: new THREE.Color("#ffd700"),
+    //             metalness: 1.0,
+    //             roughness: 0.15, // Slightly reduced for smoother, polished metal look
+    //             envMapIntensity: 2.0, // Increased for stronger, more realistic metallic reflections
+    //             emissive: new THREE.Color("#ffaa00"),
+    //             emissiveIntensity: 0.2, // Slightly reduced to avoid over-glow while keeping subtle warmth
+    //         });
+    //     }
+    // }, [materials]);
 
     useGSAP(() => {
-        const tl = gsap.timeline();
+        const tl = gsap.timeline({ delay: 1.9});
         tl.from(shapeContainer.current.position, {
             y: 5,
             duration: 3,
