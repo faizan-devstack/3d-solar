@@ -80,14 +80,14 @@ export default function ContactSection() {
                                 >
                                     <div className="text-foreground/70 group-hover:text-foreground transition-colors duration-500 border border-foreground/20 rounded-2xl p-3 ">
                                         <item.icon className="w-12 h-12 mx-auto mb-5" />
-                                        <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                                        <h3 className="text-xl font-medium mb-2">{item.title}</h3>
                                         <p>{item.value}</p>
                                     </div>
                                 </Link>
                             ) : (
                                 <div className="text-foreground border border-foreground/20 rounded-2xl p-3">
                                     <item.icon className="w-12 h-12 mx-auto mb-5" />
-                                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                                    <h3 className="text-xl font-medium mb-2">{item.title}</h3>
                                     <p>{item.value}</p>
                                 </div>
                             )}

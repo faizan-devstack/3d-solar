@@ -1,32 +1,39 @@
-import type { Metadata } from "next";
-import { Onest } from "next/font/google";
-import "./globals.css";
+import LenisProvider from '@/components/ui/lenis-provider';
+import { Onest } from 'next/font/google';
+import type { Viewport } from 'next';
+import '@/app/globals.css';
 
 const onest = Onest({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-onest',
   preload: true,
   fallback: ['system-ui', 'arial'],
 });
 
-export const metadata: Metadata = {
-  title: "3D Solar",
-  description: "A 3D animation of aesthetic solar component.",
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${onest.variable} antialiased`}
-      >
-        {children}
+    <html
+      suppressHydrationWarning
+      lang="en"
+      className={`${onest.variable}`}
+    >
+      <body className="antialiased" suppressHydrationWarning>
+        <LenisProvider>
+          <main className="bg-background">
+            {children}
+          </main>
+        </LenisProvider>
       </body>
     </html>
   );
