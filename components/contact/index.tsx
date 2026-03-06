@@ -48,7 +48,7 @@ export default function ContactSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-5xl md:text-7xl font-medium mb-12"
+                    className="text-5xl md:text-7xl font-medium uppercase tracking-wide leading-relaxed"
                 >
                     Get In Touch
                 </motion.h2>
@@ -58,7 +58,7 @@ export default function ContactSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-xl md:text-2xl font-light mb-16 max-w-3xl mx-auto leading-relaxed tracking-wide"
+                    className="uppercase text-sm max-w-3xl md:text-xl text-foreground/70 mb-16 block leading-relaxed tracking-wide overflow-hidden"
                 >
                     I'm always excited to connect about new ideas, collaborations, or just geek out over code and design.
                 </motion.p>
@@ -80,15 +80,15 @@ export default function ContactSection() {
                                 >
                                     <div className="text-foreground/70 group-hover:text-foreground transition-colors duration-500 border border-foreground/20 rounded-2xl p-3 ">
                                         <item.icon className="w-12 h-12 mx-auto mb-5" />
-                                        <h3 className="text-xl font-medium mb-2">{item.title}</h3>
-                                        <p>{item.value}</p>
+                                        <h3 className="text-xl font-medium mb-2 uppercase tracking-wide">{item.title}</h3>
+                                        <p className="tracking-wide">{item.value}</p>
                                     </div>
                                 </Link>
                             ) : (
                                 <div className="text-foreground border border-foreground/20 rounded-2xl p-3">
                                     <item.icon className="w-12 h-12 mx-auto mb-5" />
-                                    <h3 className="text-xl font-medium mb-2">{item.title}</h3>
-                                    <p>{item.value}</p>
+                                    <h3 className="text-xl font-medium mb-2 uppercase tracking-wide">{item.title}</h3>
+                                    <p className="tracking-wide">{item.value}</p>
                                 </div>
                             )}
                         </motion.div>

@@ -43,7 +43,7 @@ export const AnimatedTextLines = ({ text, className }: AnimatedTextLinesProps) =
           ref={(el) => {
             lineRefs.current[index] = el;
           }}
-          className="block leading-relaxed tracking-wide text- overflow-hidden"
+          className="block leading-relaxed tracking-wide overflow-hidden"
         >
           {/* Optional wrapper for smoother animation */}
           <span className="block">{line}</span>
